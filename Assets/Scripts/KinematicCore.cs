@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class KinematicCore : MonoBehaviour
 {
-    public float maxSpeed = 10.0f;
-    public float maxRotation = 720f;
-    public bool yVelocityEnabled = false;
+    public float maxSpeed = 2f;
+    private float maxRotation = 88.8f;
+    private bool yVelocityEnabled = false;
 
     public Vector3 velocity { get; private set; }   // m/s
     public float rotation { get; private set; } // degrees/s

@@ -6,7 +6,8 @@ public class WrapChildren : MonoBehaviour
 {
     void Update()
     {
-        float width = transform.lossyScale.x, height = transform.lossyScale.y;
+        float width = transform.lossyScale.x;
+        float height = transform.lossyScale.y;
 
         Vector3 origin = transform.position + new Vector3(-width / 2, 0, -height / 2);
 

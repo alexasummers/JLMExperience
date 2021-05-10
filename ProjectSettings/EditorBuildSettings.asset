@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MachaneYehuda.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Test.unity
+    guid: da457ae18acfaec499b9405b42830f8e
+  - enabled: 0
+    path: Assets/Scenes/Test2.unity
+    guid: 5b1d55f0fa19cf141b641a8da2e25392
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 08c042d568a02434abf6eef674249a22, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 421e023029af5934682b85a6b407ea54, type: 2}
