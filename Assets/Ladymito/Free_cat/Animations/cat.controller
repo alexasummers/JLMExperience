@@ -167,10 +167,10 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cat
+  m_Name: Cat
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Blend
+  - m_Name: Cat
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -178,7 +178,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: Base Layer
+    m_Name: Cat
     m_StateMachine: {fileID: 2010397050945934638}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -223,11 +223,11 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Base Layer
+  m_Name: Cat
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 227224688728251605}
-    m_Position: {x: 240, y: 210, z: 0}
+    m_Position: {x: 260, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7533513640193287866}
     m_Position: {x: 250, y: 310, z: 0}
@@ -279,7 +279,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Cat
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -326,7 +326,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Cat
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 2763998817853784565, guid: 9b574434f73c46a4eb333235dd556599, type: 3}
@@ -352,7 +352,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: Blend
+  m_BlendParameter: Cat
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1

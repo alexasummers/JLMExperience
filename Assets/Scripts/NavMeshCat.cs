@@ -5,30 +5,48 @@ using UnityEngine;
 public class NavMeshCat : MonoBehaviour
 {
     public UnityEngine.AI.NavMeshAgent _navMeshAgent;
-    public Transform goToPoint; //where the enemy is supposed to head
-    private Transform raycastPoint; //origin
+    public Transform goToPoint;
+    public RaycastHit hit;
 
-    Rigidbody rb;
+    private Transform _raycastPoint;
+    private Animator _animator;
 
-    private void Start () 
+    void Start() 
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation; //ensures rigid body doesn't tip over
+        _animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate() //does not get skipped -- good place to use physics
+    void FixedUpdate()
     {
-        _navMeshAgent.SetDestination(goToPoint.position); //head to the location of the player
-        RaycastHit hit;
-        Vector3 shootRay = raycastPoint.TransformDirection(Vector3.down) * 100; //transforms local space to world space
-        if (Physics.Raycast(raycastPoint.position, shootRay, out hit, 100))
+        _navMeshAgent.SetDestination(goToPoint.position);
+        Vector3 shootRay = _raycastPoint.TransformDirection(Vector3.down) * 100;
+
+        Vector3 moveTowardsPosition = hit.point;
+        moveTowardsPosition.y = transform.position.y;
+
+        transform.position = Vector3.MoveTowards(transform.position,moveTowardsPosition,_navMeshAgent.speed);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "OVRPlayerController")
         {
-            print (hit.point); //where the ray hit the collider
+            _animator.SetFloat("Cat", 0.5f);
+            _navMeshAgent.speed = 0;
         }
-        Vector3 moveTowardsPosition = hit.point; //where the player is
-        moveTowardsPosition.y = transform.position.y; //move towards the player
-
-        transform.position = Vector3.MoveTowards(transform.position,moveTowardsPosition,_navMeshAgent.speed); //movement
     }
 
+    void OnCollisionStay(Collision collisionInfo)
+    {
+        if (collisionInfo.gameObject.name == "OVRPlayerController")
+        {
+            _animator.SetFloat("Cat", 1f);
+        }
+    }
+
+     void OnCollisionExit(Collision collisionInfo)
+    {
+         _animator.SetFloat("Cat", 0.0f);
+         _navMeshAgent.speed = 1.5f;
+    }
 }
