@@ -19,12 +19,6 @@ public class NavMeshCat : MonoBehaviour
     void FixedUpdate()
     {
         _navMeshAgent.SetDestination(goToPoint.position);
-        Vector3 shootRay = _raycastPoint.TransformDirection(Vector3.down) * 100;
-
-        Vector3 moveTowardsPosition = hit.point;
-        moveTowardsPosition.y = transform.position.y;
-
-        transform.position = Vector3.MoveTowards(transform.position,moveTowardsPosition,_navMeshAgent.speed);
     }
 
     void OnCollisionEnter(Collision collision)

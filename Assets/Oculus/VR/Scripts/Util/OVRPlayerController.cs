@@ -508,7 +508,7 @@ public class OVRPlayerController : MonoBehaviour
 	/// <summary>
 	/// Jump! Must be enabled manually.
 	/// </summary>
-	public bool Jump()
+		public bool Jump()
 	{
 		if (!Controller.isGrounded)
 			return false;
